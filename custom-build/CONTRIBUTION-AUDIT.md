@@ -10,6 +10,6 @@ The public descriptions were compared with the actual diffs and benchmark record
 
 The comic client has not yet been adapted to current master. The proposal states this explicitly; the stable client is a working prototype, not a submitted upstream client PR. The comic measurements are matched first-page timings, not the older whole-test wall times.
 
-The original EPUB commit also contained illustrated-book layout inference and navigation changes. The new `perf/epub-startup` branch separates first-page availability, index generation and caching from those layout changes. Its five-file scope contains the book player, two TypeScript helpers and their tests; it contains no comic API, comic player, layout, stylesheet, template or cached-resume lookup changes.
+The original EPUB commit also contained illustrated-book layout inference and navigation changes. The new [`perf/epub-startup` branch / PR #8423](https://github.com/jellyfin/jellyfin-web/pull/8423) separates first-page availability, index generation and caching from those layout changes. Its five-file scope contains the book player, two TypeScript helpers and their tests; it contains no comic API, comic player, layout, stylesheet, template or cached-resume lookup changes.
 
 See [submission status](SUBMISSIONS.md) for the resulting EPUB contribution and [performance evidence](READER-PERFORMANCE.md) for measurements. The saved-percentage location map becomes available after first-page display; first-page timing must not be described as completion of background indexing or exact resume restoration.

@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-05",
+  "resumePr": {
+    "url": "https://github.com/jellyfin/jellyfin-web/pull/8421",
+    "head": "c3b96c57e1d22988c54ac9cabe3a654cbe9f94ef",
+    "audit": "Description scope corrected; code unchanged"
+  },
+  "comicProposal": {
+    "url": "https://github.com/jellyfin/jellyfin-meta/discussions/149",
+    "audit": "Manifest fields and focused commit links corrected; EPUB excluded"
+  },
+  "epubPr": {
+    "url": "https://github.com/jellyfin/jellyfin-web/pull/8423",
+    "issue": "https://github.com/jellyfin/jellyfin-web/issues/8422",
+    "head": "4f313fc72738b60861733f9a67ed9efd936217d8",
+    "base": "master",
+    "state": "OPEN",
+    "files": [
+      "src/plugins/bookPlayer/plugin.js",
+      "src/utils/bookPlayerLocationCache.test.ts",
+      "src/utils/bookPlayerLocationCache.ts",
+      "src/utils/bookPlayerLocations.test.ts",
+      "src/utils/bookPlayerLocations.ts"
+    ],
+    "descriptionVerified": true
+  },
+  "epubValidation": {
+    "unitTests": 190,
+    "benchmarkOpens": 28,
+    "browserScenarios": 6,
+    "typescript": "passed",
+    "lint": "passed",
+    "productionBuild": "passed"
+  }
+}

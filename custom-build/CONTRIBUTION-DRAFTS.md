@@ -41,3 +41,34 @@ The proposed comic work consists of coordinated server and web changes. The work
 ### Code assistance
 
 Codex was used to investigate the loading delays, implement the changes, and develop and run tests and benchmarks.
+
+## 3. EPUB startup PR
+
+**Title:** Reduce EPUB startup time with background location indexing
+
+### Changes
+
+In a local comparison, opening a six-book EPUB omnibus reached its first usable page in **0.20 seconds instead of 20.17 seconds**, about a **99% reduction**. This displays the first page before generating the full location map, removes EPUB.js's fixed 100 ms pause between sections while retaining browser yields, and caches completed maps in IndexedDB for reopening. Existing saved progress is retained until valid progress is available, and page turns during indexing take precedence over a delayed resume. Unusable cache entries are regenerated, and storage failures fall back to uncached generation.
+
+| Omnibus EPUB | Current master | With this change |
+| --- | ---: | ---: |
+| First usable page, cold context | 20.17 s | **0.20 s** |
+| Location map ready, cold context | 20.17 s | 3.07 s |
+| Location map ready, warm context | 20.18 s | 0.21 s |
+
+Medians of three opens per build and cache condition, using the same 6.75 MB EPUB with 171 spine items in a production-compiled BookPlayer harness, desktop Edge and local HTTP. Exact saved-percentage restoration still waits for the map; these figures describe this local desktop workload. [The measurement method, samples and validation results](https://github.com/daniel-stilman/jellyfin/blob/df536b8255be53158cdd6b43c33b3a022f82cde7/custom-build/READER-PERFORMANCE.md#epub-startup-current-master-contribution) include the other four EPUBs checked.
+
+### Issues
+
+Fixes #8422.
+
+### Code assistance
+
+Codex was used to investigate the loading delays, implement the changes, and develop and run regression tests and benchmarks.
+
+---
+
+* [ ] I have read and followed the [contributing guidelines](https://github.com/jellyfin/jellyfin-web/blob/master/CONTRIBUTING.md).
+* [x] I have tested these changes.
+* [x] I have verified that this is not duplicating changes in an existing PR.
+* [ ] I have provided a *substantive* review of [another web PR](https://github.com/jellyfin/jellyfin-web/pulls).
