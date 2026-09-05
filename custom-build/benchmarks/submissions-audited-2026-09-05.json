@@ -30,6 +30,18 @@
     "browserScenarios": 6,
     "typescript": "passed",
     "lint": "passed",
-    "productionBuild": "passed"
+    "productionBuild": "passed",
+    "upstreamChecks": [
+      {
+        "name": "SonarCloud",
+        "conclusion": "SUCCESS",
+        "completedAt": "2026-09-05T17:59:21Z"
+      },
+      {
+        "name": "SonarCloud Code Analysis",
+        "conclusion": "SUCCESS",
+        "completedAt": "2026-09-05T17:59:17Z"
+      }
+    ]
   }
 }
