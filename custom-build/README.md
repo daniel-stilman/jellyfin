@@ -40,3 +40,7 @@ Rollback restores the old binaries, web files and plugin while preserving curren
 Optional `Installation`, `DataDirectory` and `ServerUrl` parameters support an isolated rehearsal. Use a new backup directory each time. The scripts do not schedule updates or deploy automatically. For future upstream versions, create a branch from the selected release tag, port changes, update the version gates, test both repositories and rehearse against separate data. Never point a newer test server at production data.
 
 After migration, use these tools instead of the earlier overlay installer. `.reader-fork-release.json` identifies the managed installation.
+
+## Updating only the web reader
+
+When the paired release contains identical server files, `Manage-WebReaderDeployment.ps1` can install its web client while Jellyfin keeps running. Run `Prepare` with a new backup directory, the packaged release directory and installation path; then `Install` and `Verify` with that backup directory. `Rollback` restores the previous web client and release marker. The script refuses server-file differences, preserves local web settings and existing hashed chunks, and leaves the server database alone. Use the full deployment workflow for server changes. See [mobile reader validation](MOBILE-READERS.md).

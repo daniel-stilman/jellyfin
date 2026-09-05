@@ -12,7 +12,7 @@ function Get-ChildPath([string]$Root, [string]$Relative) {
 
 function Copy-Tree([string]$Source, [string]$Destination) {
     if (-not (Test-Path -LiteralPath $Source -PathType Container)) { throw "Missing source: $Source" }
-    & robocopy.exe $Source $Destination /E /COPY:DAT /DCOPY:DAT /XJ /R:1 /W:1 /NFL /NDL /NJH /NJS | Out-Null
+    & robocopy.exe $Source $Destination /E /IS /IT /COPY:DAT /DCOPY:DAT /XJ /R:1 /W:1 /NFL /NDL /NJH /NJS | Out-Null
     if ($LASTEXITCODE -ge 8) { throw "Copy failed ($LASTEXITCODE): $Source" }
 }
 
