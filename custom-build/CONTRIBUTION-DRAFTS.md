@@ -1,6 +1,6 @@
 # Reader contribution drafts for the fork owner
 
-These are AI-assisted working drafts for the owner to rewrite in their own words. They have not been submitted to Jellyfin. Add the relevant issue link and complete the current repository checklist when preparing the PR.
+These descriptions were approved by the owner and submitted on 2026-09-05: [resume PR #8421](https://github.com/jellyfin/jellyfin-web/pull/8421) and [comic API proposal #149](https://github.com/jellyfin/jellyfin-meta/discussions/149). The submissions retain the code-assistance disclosure below. See [submission status](SUBMISSIONS.md).
 
 ## 1. Resume fix PR
 

@@ -62,11 +62,11 @@ Deployed in [web commit 19fcbc2f4](https://github.com/daniel-stilman/jellyfin-we
 | Repository and branch | Scope | Preparation status |
 | --- | --- | --- |
 | [Web: fix/book-resume-progress](https://github.com/daniel-stilman/jellyfin-web/tree/fix/book-resume-progress) | Resume rollback fix and unit tests, adapted to upstream's newer SDK and reader UI | Based on upstream master; 169 web tests, types and changed-file lint passed |
-| [Server: feature/comic-page-api](https://github.com/daniel-stilman/jellyfin/tree/feature/comic-page-api) | Authenticated comic manifest/page endpoints, archive index and image cache | Based on upstream master; 147 API tests and .NET 10 analyzer build passed; needs the cross-project design discussion |
+| [Server: feature/comic-page-api](https://github.com/daniel-stilman/jellyfin/tree/feature/comic-page-api) | Authenticated comic manifest/page endpoints, archive index and image cache | Based on upstream master; 147 API tests and .NET 10 analyzer build passed; [design proposal #149](https://github.com/jellyfin/jellyfin-meta/discussions/149) is open |
 
 There is not yet a current-master contribution branch for the EPUB speedup or the comic web changes. They are committed, published and deployed on the custom release branch. Preparing them for upstream still requires adapting to the current reader UI and current requirements for TypeScript files and SDK calls. The comic client and server parts must agree on the page API.
 
-No upstream issue, Meta discussion or PR has been submitted for this work.
+The [resume PR #8421](https://github.com/jellyfin/jellyfin-web/pull/8421) and [comic API proposal #149](https://github.com/jellyfin/jellyfin-meta/discussions/149) were submitted on 2026-09-05. The PR references the existing [progress report #3575](https://github.com/jellyfin/jellyfin-web/issues/3575). See [submission status](SUBMISSIONS.md).
 
 ## How contributing works
 
@@ -95,4 +95,4 @@ The [LLM policy](https://jellyfin.org/docs/general/contributing/llm-policies/) r
 
 The recommended order is the focused resume fix first, a separately adapted EPUB startup PR, an illustrated-EPUB layout PR, and the coordinated comic API/client work after the Meta discussion. This keeps each change understandable and independently reviewable.
 
-The [revised contribution drafts](CONTRIBUTION-DRAFTS.md) lead with the observed problem or measured speed reduction, retain the code-assistance disclosure, and omit the unnecessary standalone testing narrative and broad closing question. They remain drafts for the owner to rewrite before submission.
+The [revised contribution drafts](CONTRIBUTION-DRAFTS.md) lead with the observed problem or measured speed reduction, retain the code-assistance disclosure, and omit the unnecessary standalone testing narrative and broad closing question. The owner approved these descriptions for submission; the published links and validation state are recorded in [SUBMISSIONS.md](SUBMISSIONS.md).

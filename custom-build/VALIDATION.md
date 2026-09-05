@@ -30,3 +30,5 @@ Raw runs, screenshots, private media paths and isolated test credentials stay ou
 The deployment and rollback rehearsal passed: local web settings and installer extras were preserved, obsolete web files were removed from the candidate, the old plugin was retired/restored correctly, and rollback preserved newer reading progress. Production was switched to the verified release with a complete offline data backup. The running version and all 2,809 managed file hashes match.
 
 The separate current-master resume branch passed 169 web tests, its seven focused regression cases, types and changed-file lint. The current-master server proposal passed 147 API tests and the .NET 10 analyzer build. These are prepared contribution branches, not accepted upstream changes.
+
+On 2026-09-05 the resume contribution was rebased to current master and again passed 169 tests, types and changed-file lint before [PR #8421](https://github.com/jellyfin/jellyfin-web/pull/8421) was opened. The comic work was published as [Meta proposal #149](https://github.com/jellyfin/jellyfin-meta/discussions/149).
