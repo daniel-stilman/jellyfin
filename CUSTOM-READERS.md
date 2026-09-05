@@ -11,3 +11,5 @@ See [build, installation and rollback](custom-build/README.md) and [validation e
 Make future work, including themes, on feature branches. Keep upstream upgrades separate from reader changes and test both repositories before deploying. A fork preserves the history; upgrades still require conflict resolution and testing. An official installer can replace custom files, so verify the release after repairs or updates.
 
 Upstream contributions use focused branches based on current upstream `master`. The independent resume fix can be reviewed separately. The cross-project comic page API needs a Jellyfin Meta discussion before a large PR. Follow the [development process](https://jellyfin.org/docs/general/contributing/development/) and [LLM policy](https://jellyfin.org/docs/general/contributing/llm-policies/): understand the code and write your own upstream descriptions, issues and comments.
+
+For an owner-facing explanation of the preserved changes, published contribution branches and accepted PR examples, see the [contribution guide](custom-build/CONTRIBUTIONS.md).
