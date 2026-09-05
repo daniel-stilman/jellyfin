@@ -1,0 +1,72 @@
+{
+  "variant": "toc",
+  "kind": "toc",
+  "browser": "152.0.4191.62",
+  "results": [
+    {
+      "fixture": "nested-nav",
+      "links": [
+        {
+          "text": "Target chapter",
+          "href": "/OEBPS/Text/chapter.xhtml#target"
+        }
+      ],
+      "displayed": true,
+      "errors": [],
+      "rejections": [],
+      "passed": true
+    },
+    {
+      "fixture": "parent-links",
+      "links": [
+        {
+          "text": "Target chapter",
+          "href": "/OEBPS/Text/chapter.xhtml#target"
+        }
+      ],
+      "displayed": true,
+      "errors": [],
+      "rejections": [],
+      "passed": true
+    },
+    {
+      "fixture": "parent-package",
+      "links": [
+        {
+          "text": "Target chapter",
+          "href": "/OEBPS/Text/chapter.xhtml#target"
+        }
+      ],
+      "displayed": true,
+      "errors": [],
+      "rejections": [],
+      "passed": true
+    },
+    {
+      "fixture": "escaped-name",
+      "links": [
+        {
+          "text": "Target chapter",
+          "href": "/OEBPS/Text/A%20Book.xhtml#target"
+        }
+      ],
+      "displayed": true,
+      "errors": [],
+      "rejections": [],
+      "passed": true
+    },
+    {
+      "fixture": "standard-ncx",
+      "links": [
+        {
+          "text": "Target chapter",
+          "href": "/OEBPS/Text/chapter.xhtml#target"
+        }
+      ],
+      "displayed": true,
+      "errors": [],
+      "rejections": [],
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "variant": "pdf",
+  "kind": "pdf",
+  "browser": "152.0.4191.62",
+  "results": [
+    {
+      "viewport": {
+        "width": 412,
+        "height": 892
+      },
+      "initial": {
+        "width": 412,
+        "height": 618,
+        "pixel": [
+          10,
+          89,
+          166,
+          255
+        ]
+      },
+      "waiting": {
+        "width": 412,
+        "height": 618,
+        "pixel": [
+          10,
+          89,
+          166,
+          255
+        ]
+      },
+      "completed": {
+        "width": 412,
+        "height": 618,
+        "pixel": [
+          82,
+          89,
+          166,
+          255
+        ]
+      },
+      "rapidNavigation": "passed: final page, obsolete completion, resize and stop during rendering",
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1024,
+        "height": 1366
+      },
+      "initial": {
+        "width": 911,
+        "height": 1366,
+        "pixel": [
+          10,
+          89,
+          166,
+          255
+        ]
+      },
+      "waiting": {
+        "width": 911,
+        "height": 1366,
+        "pixel": [
+          10,
+          89,
+          166,
+          255
+        ]
+      },
+      "completed": {
+        "width": 911,
+        "height": 1366,
+        "pixel": [
+          82,
+          89,
+          166,
+          255
+        ]
+      },
+      "rapidNavigation": "passed: final page, obsolete completion, resize and stop during rendering",
+      "passed": true
+    }
+  ]
+}

@@ -2,12 +2,14 @@
 
 Submitted on 2026-09-05 with the owner's authorization and approved descriptions.
 
+Rechecked on 2026-09-06: all four submissions below have been closed by a maintainer. The closure comments cite the LLM policy; the PR comments also cite contribution requirements. Two additional focused branches were prepared and tested, but no new official submissions were posted. See the [current reader contribution audit](UPSTREAM-READER-AUDIT.md).
+
 | Submission | Destination | Status when recorded |
 | --- | --- | --- |
-| [Refresh cached resume positions for EPUB books and comics](https://github.com/jellyfin/jellyfin-web/pull/8421) | jellyfin/jellyfin-web, PR #8421, targeting master | Open for review |
-| [Reduce EPUB startup time with background location indexing](https://github.com/jellyfin/jellyfin-web/pull/8423) | jellyfin/jellyfin-web, PR #8423, targeting master | Open for review |
-| [EPUB location-indexing startup delay](https://github.com/jellyfin/jellyfin-web/issues/8422) | jellyfin/jellyfin-web, issue #8422 | Open; linked from PR #8423 |
-| [Reduce comic startup time with individual page delivery](https://github.com/jellyfin/jellyfin-meta/discussions/149) | jellyfin/jellyfin-meta, Proposals discussion #149 | Published |
+| [Refresh cached resume positions for EPUB books and comics](https://github.com/jellyfin/jellyfin-web/pull/8421) | jellyfin/jellyfin-web, PR #8421, targeting master | Closed on 2026-09-05 |
+| [Reduce EPUB startup time with background location indexing](https://github.com/jellyfin/jellyfin-web/pull/8423) | jellyfin/jellyfin-web, PR #8423, targeting master | Closed on 2026-09-05 |
+| [EPUB location-indexing startup delay](https://github.com/jellyfin/jellyfin-web/issues/8422) | jellyfin/jellyfin-web, issue #8422 | Closed on 2026-09-05 |
+| [Reduce comic startup time with individual page delivery](https://github.com/jellyfin/jellyfin-meta/discussions/149) | jellyfin/jellyfin-meta, Proposals discussion #149 | Closed on 2026-09-05 |
 
 ## Resume PR
 
@@ -29,4 +31,4 @@ All 190 unit tests, TypeScript, changed-file lint, the production build, 28 matc
 
 See [scope audit](CONTRIBUTION-AUDIT.md), [performance evidence](READER-PERFORMANCE.md#epub-startup-current-master-contribution) and [published descriptions](CONTRIBUTION-DRAFTS.md).
 
-The deployed custom release remains identified by the `readers-r5` tags. Upstream submission does not mean acceptance or inclusion in an official release.
+The deployed custom release is now identified by the `readers-r7` tags. The source and original performance changes remain backed up despite the upstream closures. Upstream submission does not mean acceptance or inclusion in an official release.

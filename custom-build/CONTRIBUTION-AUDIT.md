@@ -1,6 +1,8 @@
 # Contribution scope audit - 2026-09-05
 
-The public descriptions were compared with the actual diffs and benchmark records. The original web improvements remain preserved: applying the former maintenance overlay to v10.11.11 produces tree `afe8c6ac8199dfa60fdda72f18d1e110deb6605e`, identical to the imported fork at `20ec84b1b`. Both GitHub repositories are genuine forks with the expected Jellyfin parents. The deployed source remains identified by `readers-r5`.
+Update on 2026-09-06: the earlier official submissions have been closed, the deployed release is now `readers-r7`, and the new reader changes have been audited separately in [UPSTREAM-READER-AUDIT.md](UPSTREAM-READER-AUDIT.md). The sections below preserve the earlier scope findings and historical r5 deployment reference.
+
+The public descriptions were compared with the actual diffs and benchmark records. The original web improvements remain preserved: applying the former maintenance overlay to v10.11.11 produces tree `afe8c6ac8199dfa60fdda72f18d1e110deb6605e`, identical to the imported fork at `20ec84b1b`. Both GitHub repositories are genuine forks with the expected Jellyfin parents. At the time of this audit, the deployed source was identified by `readers-r5`.
 
 | Submission or branch | Verified implementation | Audit result |
 | --- | --- | --- |

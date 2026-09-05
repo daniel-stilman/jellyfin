@@ -1,0 +1,80 @@
+{
+  "variant": "baseline",
+  "kind": "toc",
+  "browser": "152.0.4191.62",
+  "results": [
+    {
+      "fixture": "nested-nav",
+      "links": [
+        {
+          "text": "Target chapter",
+          "href": "/OEBPS/chapter.xhtml#target"
+        }
+      ],
+      "displayed": false,
+      "errors": [],
+      "rejections": [
+        "Error: No Section Found"
+      ],
+      "passed": true
+    },
+    {
+      "fixture": "parent-links",
+      "links": [
+        {
+          "text": "Target chapter",
+          "href": "/OEBPS/../Text/chapter.xhtml#target"
+        }
+      ],
+      "displayed": false,
+      "errors": [],
+      "rejections": [
+        "Error: No Section Found"
+      ],
+      "passed": true
+    },
+    {
+      "fixture": "parent-package",
+      "links": [
+        {
+          "text": "Target chapter",
+          "href": "/OEBPS/Package/Text/chapter.xhtml#target"
+        }
+      ],
+      "displayed": false,
+      "errors": [],
+      "rejections": [
+        "Error: No Section Found"
+      ],
+      "passed": true
+    },
+    {
+      "fixture": "escaped-name",
+      "links": [
+        {
+          "text": "Target chapter",
+          "href": "/OEBPS/A%20Book.xhtml#target"
+        }
+      ],
+      "displayed": false,
+      "errors": [],
+      "rejections": [
+        "Error: No Section Found"
+      ],
+      "passed": true
+    },
+    {
+      "fixture": "standard-ncx",
+      "links": [
+        {
+          "text": "Target chapter",
+          "href": "/OEBPS/Text/chapter.xhtml#target"
+        }
+      ],
+      "displayed": true,
+      "errors": [],
+      "rejections": [],
+      "passed": true
+    }
+  ]
+}

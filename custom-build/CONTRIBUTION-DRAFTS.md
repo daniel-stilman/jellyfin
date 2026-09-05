@@ -2,6 +2,8 @@
 
 Published descriptions, audited against their branch diffs on 2026-09-05. See [submission status](SUBMISSIONS.md).
 
+Historical record: the associated submissions were closed on 2026-09-05. See the [2026-09-06 audit](UPSTREAM-READER-AUDIT.md) for the closure reasons and remaining requirements before any further official submission.
+
 ## 1. Resume fix PR
 
 **Title:** Refresh cached resume positions for EPUB books and comics
