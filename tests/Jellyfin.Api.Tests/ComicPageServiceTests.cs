@@ -28,15 +28,15 @@ public sealed class ComicPageServiceTests : IDisposable
 
         using var service = CreateService();
         var itemId = Guid.NewGuid();
-        var manifest = await service.GetManifestAsync(itemId, archivePath, CancellationToken.None);
-        var first = await service.GetPageAsync(itemId, archivePath, 0, CancellationToken.None);
-        var second = await service.GetPageAsync(itemId, archivePath, 1, CancellationToken.None);
-        var third = await service.GetPageAsync(itemId, archivePath, 2, CancellationToken.None);
+        var manifest = await service.GetManifestAsync(itemId, archivePath, TestContext.Current.CancellationToken);
+        var first = await service.GetPageAsync(itemId, archivePath, 0, TestContext.Current.CancellationToken);
+        var second = await service.GetPageAsync(itemId, archivePath, 1, TestContext.Current.CancellationToken);
+        var third = await service.GetPageAsync(itemId, archivePath, 2, TestContext.Current.CancellationToken);
 
         Assert.Equal(3, manifest.PageCount);
-        Assert.Equal([1], await File.ReadAllBytesAsync(first.FilePath));
-        Assert.Equal([2], await File.ReadAllBytesAsync(second.FilePath));
-        Assert.Equal([10], await File.ReadAllBytesAsync(third.FilePath));
+        Assert.Equal([1], await File.ReadAllBytesAsync(first.FilePath, TestContext.Current.CancellationToken));
+        Assert.Equal([2], await File.ReadAllBytesAsync(second.FilePath, TestContext.Current.CancellationToken));
+        Assert.Equal([10], await File.ReadAllBytesAsync(third.FilePath, TestContext.Current.CancellationToken));
     }
 
     [Fact]
@@ -47,20 +47,20 @@ public sealed class ComicPageServiceTests : IDisposable
         using var service = CreateService();
         var itemId = Guid.NewGuid();
 
-        var firstManifest = await service.GetManifestAsync(itemId, archivePath, CancellationToken.None);
-        var firstPage = await service.GetPageAsync(itemId, archivePath, 0, CancellationToken.None);
-        var cachedPage = await service.GetPageAsync(itemId, archivePath, 0, CancellationToken.None);
+        var firstManifest = await service.GetManifestAsync(itemId, archivePath, TestContext.Current.CancellationToken);
+        var firstPage = await service.GetPageAsync(itemId, archivePath, 0, TestContext.Current.CancellationToken);
+        var cachedPage = await service.GetPageAsync(itemId, archivePath, 0, TestContext.Current.CancellationToken);
         Assert.Equal(firstPage.FilePath, cachedPage.FilePath);
 
-        await Task.Delay(20);
+        await Task.Delay(20, TestContext.Current.CancellationToken);
         CreateArchive(archivePath, new Dictionary<string, byte[]> { ["page1.png"] = [4, 5, 6, 7] });
         File.SetLastWriteTimeUtc(archivePath, DateTime.UtcNow.AddSeconds(1));
-        var secondManifest = await service.GetManifestAsync(itemId, archivePath, CancellationToken.None);
-        var changedPage = await service.GetPageAsync(itemId, archivePath, 0, CancellationToken.None);
+        var secondManifest = await service.GetManifestAsync(itemId, archivePath, TestContext.Current.CancellationToken);
+        var changedPage = await service.GetPageAsync(itemId, archivePath, 0, TestContext.Current.CancellationToken);
 
         Assert.NotEqual(firstManifest.SourceVersion, secondManifest.SourceVersion);
         Assert.NotEqual(firstPage.FilePath, changedPage.FilePath);
-        Assert.Equal([4, 5, 6, 7], await File.ReadAllBytesAsync(changedPage.FilePath));
+        Assert.Equal([4, 5, 6, 7], await File.ReadAllBytesAsync(changedPage.FilePath, TestContext.Current.CancellationToken));
     }
 
     [Fact]
@@ -79,7 +79,7 @@ public sealed class ComicPageServiceTests : IDisposable
 
         using (var firstService = CreateService())
         {
-            var firstManifest = await firstService.GetManifestAsync(itemId, archivePath, CancellationToken.None);
+            var firstManifest = await firstService.GetManifestAsync(itemId, archivePath, TestContext.Current.CancellationToken);
             sourceVersion = firstManifest.SourceVersion;
             pageCount = firstManifest.PageCount;
         }
@@ -92,16 +92,16 @@ public sealed class ComicPageServiceTests : IDisposable
             "index-v1.json");
         Assert.True(File.Exists(indexPath));
 
-        var archiveBytes = await File.ReadAllBytesAsync(archivePath);
+        var archiveBytes = await File.ReadAllBytesAsync(archivePath, TestContext.Current.CancellationToken);
         Array.Fill<byte>(archiveBytes, 0);
-        await File.WriteAllBytesAsync(archivePath, archiveBytes);
+        await File.WriteAllBytesAsync(archivePath, archiveBytes, TestContext.Current.CancellationToken);
         File.SetLastWriteTimeUtc(archivePath, sourceLastWriteTimeUtc);
 
         using var secondService = CreateService();
         var restoredManifest = await secondService.GetManifestAsync(
             itemId,
             archivePath,
-            CancellationToken.None);
+            TestContext.Current.CancellationToken);
 
         Assert.Equal(sourceVersion, restoredManifest.SourceVersion);
         Assert.Equal(pageCount, restoredManifest.PageCount);
@@ -119,7 +119,7 @@ public sealed class ComicPageServiceTests : IDisposable
         var itemId = Guid.NewGuid();
         using var service = CreateService();
 
-        var manifest = await service.GetManifestAsync(itemId, archivePath, 1, CancellationToken.None);
+        var manifest = await service.GetManifestAsync(itemId, archivePath, 1, TestContext.Current.CancellationToken);
 
         var warmedPagePath = Path.Combine(
             _root,
@@ -129,7 +129,7 @@ public sealed class ComicPageServiceTests : IDisposable
             "page-000001.jpg");
 
         Assert.True(File.Exists(warmedPagePath));
-        Assert.Equal([2], await File.ReadAllBytesAsync(warmedPagePath));
+        Assert.Equal([2], await File.ReadAllBytesAsync(warmedPagePath, TestContext.Current.CancellationToken));
     }
 
     [Fact]
@@ -142,7 +142,7 @@ public sealed class ComicPageServiceTests : IDisposable
 
         using (var firstService = CreateService())
         {
-            var firstManifest = await firstService.GetManifestAsync(itemId, archivePath, CancellationToken.None);
+            var firstManifest = await firstService.GetManifestAsync(itemId, archivePath, TestContext.Current.CancellationToken);
             sourceVersion = firstManifest.SourceVersion;
         }
 
@@ -152,10 +152,10 @@ public sealed class ComicPageServiceTests : IDisposable
             itemId.ToString("N"),
             sourceVersion,
             "index-v1.json");
-        await File.WriteAllTextAsync(indexPath, "not json");
+        await File.WriteAllTextAsync(indexPath, "not json", TestContext.Current.CancellationToken);
 
         using var secondService = CreateService();
-        var rebuiltManifest = await secondService.GetManifestAsync(itemId, archivePath, CancellationToken.None);
+        var rebuiltManifest = await secondService.GetManifestAsync(itemId, archivePath, TestContext.Current.CancellationToken);
 
         Assert.Equal(sourceVersion, rebuiltManifest.SourceVersion);
         Assert.Equal(1, rebuiltManifest.PageCount);
@@ -172,7 +172,7 @@ public sealed class ComicPageServiceTests : IDisposable
             Guid.NewGuid(),
             archivePath,
             1,
-            CancellationToken.None));
+            TestContext.Current.CancellationToken));
     }
 
     private ComicPageService CreateService()
