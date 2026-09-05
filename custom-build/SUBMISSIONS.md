@@ -15,7 +15,7 @@ The testing and duplicate-check confirmations are checked. The overall contribut
 
 ## Comic API proposal
 
-The proposal includes the measured 309-page comic startup reduction from 7.86 to 0.16 seconds and the separate EPUB reduction from 20.17 to 0.21 seconds, with links to benchmark evidence and the implementation. Its published body and Proposals category were read back and verified.
+The proposal covers comic loading, the page API and caching, with the measured 309-page comic startup reduction from 7.86 to 0.16 seconds and links to the comic benchmark evidence and implementation. The unrelated EPUB paragraph was removed at the owner's request on 2026-09-05. The updated published body was read back and verified.
 
 The server feature branch exists. The comic web adaptation and separate EPUB contribution branch still need preparation. The proposal is a design discussion; no comic server or client PR has been opened yet.
 

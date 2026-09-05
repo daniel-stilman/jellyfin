@@ -22,11 +22,9 @@ In a local comparison, the time to display the first page of a **309-page comic 
 
 The current reader downloads the entire archive and extracts its images before opening the comic. The proposed API provides an authenticated page list and individual page images, allowing the reader to show the requested page as soon as it is available and fetch nearby pages as needed. The server reuses archive indexes and extracted images, while the browser keeps a bounded page cache.
 
-These comic figures are medians of three opens per build on the same local server, using fresh browser sessions and an empty application cache. They were measured in desktop Edge over loopback; device, archive and network conditions affect the result.
+[These comic figures](https://github.com/daniel-stilman/jellyfin/blob/4b25579a58a09b4b7d9aa294c571cb8d4d55db85/custom-build/READER-PERFORMANCE.md#comic-startup-matched-original-and-fork-comparison) are medians of three opens per build on the same local server, using fresh browser sessions and an empty application cache. They were measured in desktop Edge over loopback; device, archive and network conditions affect the result.
 
-A separate EPUB startup change reduced the first usable page time for a large omnibus from **20.17 seconds to 0.21 seconds**, about a **99% reduction**. It displays the book while preparing its location map in the background and caches that map for later opens. This would be a separate web contribution; it does not depend on the comic API.
-
-The proposed comic work consists of coordinated server and web changes. A working implementation is available in the 10.11.11 fork, and the server API has also been adapted to current master. The web adaptation is still pending.
+The proposed comic work consists of coordinated server and web changes. A working implementation is available in the [10.11.11 web fork](https://github.com/daniel-stilman/jellyfin-web/tree/readers-r5) and [server fork](https://github.com/daniel-stilman/jellyfin/tree/readers-r5), and the [server API has also been adapted to master](https://github.com/daniel-stilman/jellyfin/tree/feature/comic-page-api). The web adaptation is still pending.
 
 ### Code assistance
 
@@ -35,6 +33,6 @@ Codex was used to investigate the loading delays, implement the changes, and dev
 ## Notes for the owner
 
 - The resume draft follows the short Changes and Code assistance format used by recent merged web PRs. The normal testing checkbox remains; a separate Testing section and a list of every test count are unnecessary here.
-- The comic proposal leads with a measured before/after comparison. The EPUB result is identified as separate work so it is not incorrectly attributed to the comic API.
+- The comic proposal covers comic loading only and leads with a measured before/after comparison. EPUB startup and layout improvements belong in separate contributions.
 - The broad closing question has been removed. The scope and current implementation status are stated directly.
 - Measurement conditions and supporting figures are recorded in [READER-PERFORMANCE.md](READER-PERFORMANCE.md).
