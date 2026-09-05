@@ -1,4 +1,4 @@
-# Mobile reader navigation — readers-r6
+# Mobile reader navigation â€” readers-r6
 
 ## Scope and cause
 
@@ -29,3 +29,15 @@ The paired release uses the same server binaries as readers-r5. `Manage-WebReade
 A disposable deployment rehearsal verified prepare/install/rollback, preserved settings and older chunks, and unchanged reading-progress data. Copying now includes files whose sizes and timestamps match so release hashes, rather than copy heuristics, determine correctness.
 
 This release does not change the submitted upstream resume/performance branches or the comic API proposal. Mobile presentation changes remain a separate customization.
+
+## Momentum follow-up - readers-r7
+
+The r6 release required a drag past the midpoint even for a quick flick. Readers now use a short history of input-event timestamps to recognize release velocity, with a 24 CSS-pixel movement guard and a 0.25 CSS-pixel/ms velocity threshold. These thresholds do not grow with the viewport. Motion samples are separate from release-event delay; holding still for 100 ms discards momentum. Slow drags keep the nearest-page rule, and reversing at release can return the page.
+
+PDFs and comic archives apply the release decision through Swiper's existing snapping, zoom, RTL and slide-group handling. EPUBs use the same decision in their existing drag controller, normalizing iframe event clocks. Rendering, page layout, animation duration, prefetch, startup optimizations and reading-progress formats are unchanged. No upstream contribution branch is modified.
+
+The approach follows established pagers' use of fling velocity and distance, as described by [Flutter PageScrollPhysics](https://api.flutter.dev/flutter/widgets/PageScrollPhysics-class.html). The thresholds are this reader's tuning, not a claim to reproduce any specific platform's physics.
+
+Validation includes 239 passing unit tests, TypeScript, changed-file ESLint, the production build and the ES5 bundle check. Browser touch checks use the same 60-pixel flick on phone and tablet viewports and cover both directions, slow drags, pause-before-release, cancellation and reversal. EPUB tests use the actual pagination width, including two-page tablet layouts; text-book checks run within a chapter after its view buffer initializes. PDF/comic checks also cover mouse input, and comic checks cover RTL and two-page spreads. The phone itself remains reserved for another task; these are desktop-browser touch emulations.
+
+The web-only release uses the verified backup/install/rollback process above and the same backend binaries as r6.

@@ -17,7 +17,7 @@ try {
     Invoke-Checked npx.cmd @('--yes', '--package=npm@10.9.3', 'npm', 'ci', '--no-audit', '--no-fund')
     Invoke-Checked npx.cmd @('vitest', '--watch=false', '--config', 'vite.config.ts')
     Invoke-Checked npx.cmd @('tsc', '--noEmit')
-    Invoke-Checked npx.cmd @('eslint', 'src/plugins/bookPlayer', 'src/plugins/comicsPlayer', 'src/plugins/pdfPlayer', 'src/utils/bookPlayer*.ts', 'src/utils/readerNavigation*.ts', 'src/utils/pdfPageCache*.ts')
+    Invoke-Checked npx.cmd @('eslint', 'src/plugins/bookPlayer', 'src/plugins/comicsPlayer', 'src/plugins/pdfPlayer', 'src/utils/bookPlayer*.ts', 'src/utils/readerNavigation*.ts', 'src/utils/readerMomentum*.ts', 'src/utils/pdfPageCache*.ts')
     Invoke-Checked npx.cmd @('stylelint', 'src/plugins/bookPlayer/style.scss', 'src/plugins/comicsPlayer/style.scss', 'src/plugins/pdfPlayer/style.scss', 'src/styles/reader.scss')
     Invoke-Checked npm.cmd @('run', 'build:production')
     Invoke-Checked npm.cmd @('run', 'escheck')
