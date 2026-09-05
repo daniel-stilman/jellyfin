@@ -39,6 +39,8 @@ On the server, archive entries are sorted in natural page order, archive indexes
 
 The migrated build opened a 309-page CBR in 503 ms and a 1,064-page CBR in 898 ms in local browser checks. Sampled beginning, adjacent, distant and final pages decoded correctly, with no whole-archive download. Image URLs were bounded during use and all released on close. These checks confirm the optimization still works; they are not a controlled speed comparison with the preceding custom plugin.
 
+A later matched comparison of the original 10.11.11 web reader and the fork measured the same 309-page comic over three opens per build: median startup fell from **7.86 seconds to 0.16 seconds**, a **97.93% reduction**. These measurements supersede the earlier after-only figures for the proposal headline. [Performance evidence](READER-PERFORMANCE.md) records the conditions, raw samples and the boundaries of the older measurements.
+
 Preserved in [web commit 20ec84b1b](https://github.com/daniel-stilman/jellyfin-web/commit/20ec84b1bbaafc7d503d9a821b688c78a3b30d5a) and the [native server commit](https://github.com/daniel-stilman/jellyfin/commit/6b863321b).
 
 ### Illustrated EPUB layout and navigation
@@ -83,6 +85,8 @@ Examples were checked as merged PRs, including their public discussion. Their ac
 
 Both current [server](https://github.com/jellyfin/jellyfin/blob/master/.github/pull_request_template.md) and [web](https://github.com/jellyfin/jellyfin-web/blob/master/.github/pull_request_template.md) templates ask for a Changes section of one to five sentences, related issues and a Code assistance section. The web template additionally requests before/after images for UI changes and confirmations of testing, duplicate checking and a substantive review of another web PR. Those boxes should only be checked after completing the stated work.
 
+A sample of 20 recent merged, non-dependency web PRs checked on 2026-09-05 contained 19 checked testing confirmations and no separate Testing heading. This is a small descriptive sample, not a requirement or a guarantee of acceptance. Testing remains expected; the template does not require a separate testing narrative. For the resume fix, keep the description short and retain the normal checklist instead of listing every test count.
+
 For our work, a useful description should cover the visible problem, its cause, the chosen change, and evidence that the change works. A performance PR benefits from a small results table and the test conditions; a layout PR benefits from screenshots; the resume PR benefits from the reproduction steps and the explicit-start/backward-progress checks. There is no need to narrate the whole development session or every changed line.
 
 Use a short action title. The web [contributing guide](https://github.com/jellyfin/jellyfin-web/blob/master/CONTRIBUTING.md) requests plain titles and discourages Conventional Commit prefixes. The Code assistance disclosure must accurately describe the assistance used here, which included investigation, implementation, tests and benchmarks.
@@ -90,3 +94,5 @@ Use a short action title. The web [contributing guide](https://github.com/jellyf
 The [LLM policy](https://jellyfin.org/docs/general/contributing/llm-policies/) requires the owner's explanation and understanding, including the ability to answer review feedback. Use this document to understand the work, then write an independent explanation for the maintainers.
 
 The recommended order is the focused resume fix first, a separately adapted EPUB startup PR, an illustrated-EPUB layout PR, and the coordinated comic API/client work after the Meta discussion. This keeps each change understandable and independently reviewable.
+
+The [revised contribution drafts](CONTRIBUTION-DRAFTS.md) lead with the observed problem or measured speed reduction, retain the code-assistance disclosure, and omit the unnecessary standalone testing narrative and broad closing question. They remain drafts for the owner to rewrite before submission.

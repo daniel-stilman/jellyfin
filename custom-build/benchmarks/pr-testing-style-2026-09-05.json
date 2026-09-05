@@ -1,0 +1,109 @@
+{
+  "checkedAt": "2026-09-05",
+  "selection": "20 recent merged non-dependency jellyfin-web PRs, listed by creation order",
+  "sampleSize": 20,
+  "checkedTestingConfirmation": 19,
+  "separateTestingHeading": 0,
+  "pullRequests": [
+    {
+      "number": 8405,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8405",
+      "mergedAt": "2026-08-31T18:27:11Z"
+    },
+    {
+      "number": 8402,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8402",
+      "mergedAt": "2026-08-28T15:53:18Z"
+    },
+    {
+      "number": 8401,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8401",
+      "mergedAt": "2026-08-28T15:54:39Z"
+    },
+    {
+      "number": 8397,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8397",
+      "mergedAt": "2026-08-28T11:25:57Z"
+    },
+    {
+      "number": 8395,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8395",
+      "mergedAt": "2026-08-27T18:29:16Z"
+    },
+    {
+      "number": 8393,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8393",
+      "mergedAt": "2026-08-27T03:43:23Z"
+    },
+    {
+      "number": 8383,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8383",
+      "mergedAt": "2026-08-25T21:24:42Z"
+    },
+    {
+      "number": 8382,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8382",
+      "mergedAt": "2026-08-25T21:58:47Z"
+    },
+    {
+      "number": 8376,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8376",
+      "mergedAt": "2026-08-18T16:49:41Z"
+    },
+    {
+      "number": 8374,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8374",
+      "mergedAt": "2026-08-18T16:29:08Z"
+    },
+    {
+      "number": 8353,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8353",
+      "mergedAt": "2026-08-16T19:15:48Z"
+    },
+    {
+      "number": 8338,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8338",
+      "mergedAt": "2026-08-11T13:52:32Z"
+    },
+    {
+      "number": 8336,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8336",
+      "mergedAt": "2026-08-07T15:44:26Z"
+    },
+    {
+      "number": 8331,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8331",
+      "mergedAt": "2026-08-06T16:24:15Z"
+    },
+    {
+      "number": 8329,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8329",
+      "mergedAt": "2026-08-06T16:59:34Z"
+    },
+    {
+      "number": 8328,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8328",
+      "mergedAt": "2026-08-25T21:56:24Z"
+    },
+    {
+      "number": 8327,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8327",
+      "mergedAt": "2026-08-05T22:23:00Z"
+    },
+    {
+      "number": 8314,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8314",
+      "mergedAt": "2026-08-04T20:40:01Z"
+    },
+    {
+      "number": 8308,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8308",
+      "mergedAt": "2026-08-01T16:27:49Z"
+    },
+    {
+      "number": 8307,
+      "url": "https://github.com/jellyfin/jellyfin-web/pull/8307",
+      "mergedAt": "2026-08-01T15:58:58Z"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "metric": "Click to first decoded visible page, including one following animation frame",
+  "conditions": "Same local native r5 server and PC; fresh browser context per comic; fresh server process and empty application cache per variant/repetition; OS file cache not cleared; no network throttling",
+  "order": [
+    "original-1",
+    "fork-1",
+    "fork-2",
+    "original-2",
+    "original-3",
+    "fork-3"
+  ],
+  "results": [
+    {
+      "variant": "original",
+      "repetition": 1,
+      "browser": "152.0.4191.62",
+      "samples": [
+        {
+          "firstVisiblePageMs": 10727.200000047684,
+          "pageCount": 309,
+          "activeIndex": 0,
+          "imageDimensions": [
+            4096,
+            2880
+          ],
+          "imageUrls": 309,
+          "heapBytes": 747173711,
+          "wholeArchiveDownloads": 1,
+          "errors": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "variant": "fork",
+      "repetition": 1,
+      "browser": "152.0.4191.62",
+      "samples": [
+        {
+          "firstVisiblePageMs": 312.7999999523163,
+          "pageCount": 309,
+          "activeIndex": 0,
+          "imageDimensions": [
+            4096,
+            2880
+          ],
+          "imageUrls": 1,
+          "heapBytes": 20957384,
+          "wholeArchiveDownloads": 0,
+          "errors": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "variant": "fork",
+      "repetition": 2,
+      "browser": "152.0.4191.62",
+      "samples": [
+        {
+          "firstVisiblePageMs": 162.70000004768372,
+          "pageCount": 309,
+          "activeIndex": 0,
+          "imageDimensions": [
+            4096,
+            2880
+          ],
+          "imageUrls": 1,
+          "heapBytes": 21193722,
+          "wholeArchiveDownloads": 0,
+          "errors": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "variant": "original",
+      "repetition": 2,
+      "browser": "152.0.4191.62",
+      "samples": [
+        {
+          "firstVisiblePageMs": 7862.200000047684,
+          "pageCount": 309,
+          "activeIndex": 0,
+          "imageDimensions": [
+            4096,
+            2880
+          ],
+          "imageUrls": 309,
+          "heapBytes": 747224656,
+          "wholeArchiveDownloads": 1,
+          "errors": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "variant": "original",
+      "repetition": 3,
+      "browser": "152.0.4191.62",
+      "samples": [
+        {
+          "firstVisiblePageMs": 6667.799999952316,
+          "pageCount": 309,
+          "activeIndex": 0,
+          "imageDimensions": [
+            4096,
+            2880
+          ],
+          "imageUrls": 309,
+          "heapBytes": 747172110,
+          "wholeArchiveDownloads": 1,
+          "errors": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "variant": "fork",
+      "repetition": 3,
+      "browser": "152.0.4191.62",
+      "samples": [
+        {
+          "firstVisiblePageMs": 162,
+          "pageCount": 309,
+          "activeIndex": 0,
+          "imageDimensions": [
+            4096,
+            2880
+          ],
+          "imageUrls": 1,
+          "heapBytes": 21637741,
+          "wholeArchiveDownloads": 0,
+          "errors": []
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "comparisons": [
+    {
+      "pages": 309,
+      "measurementsMs": {
+        "original": [
+          10727.200000047684,
+          7862.200000047684,
+          6667.799999952316
+        ],
+        "fork": [
+          312.7999999523163,
+          162.70000004768372,
+          162
+        ]
+      },
+      "medianMs": {
+        "original": 7862.200000047684,
+        "fork": 162.70000004768372
+      },
+      "reductionPercent": 97.93060466476689
+    }
+  ],
+  "passed": true,
+  "schemaVersion": 1,
+  "measuredOn": "2026-09-05",
+  "environment": {
+    "os": "Windows",
+    "cpu": "Intel Core i7-13700F",
+    "installedMemoryGiB": 32,
+    "viewportCssPx": [
+      1280,
+      900
+    ],
+    "browser": "Headless Microsoft Edge 152.0.4191.62",
+    "archiveBytes": 715110283,
+    "format": "CBR"
+  },
+  "builds": {
+    "originalWeb": "Preserved original Jellyfin web 10.11.11 installation, backed up before reader modifications",
+    "originalComicChunkSha256": "38926eb5a385340d480a5df70c477960a2240ed38d54b738b0317f438ad242d1",
+    "forkWebCommit": "1b3f7a7ba3283e348b0ab33a39998bfddcf33390",
+    "serverCommitForBothVariants": "df39df78d38b1f5857e04b4697d77725a856d272",
+    "releaseTag": "readers-r5"
+  },
+  "releaseChecks": [
+    {
+      "path": "jellyfin-web/comicsPlayer-plugin.1d2b3d19cc2f0b3e373e.chunk.js",
+      "sha256": "da02819a210ee370caa0b6d6eed3f62ff0c35f949bb8991942e0c535bb7ace8b",
+      "releaseMatches": true
+    },
+    {
+      "path": "jellyfin-web/comicsPlayer-plugin.1d2b3d19cc2f0b3e373e.chunk.js.LICENSE.txt",
+      "sha256": "52d56dc35b1c9b0d0afbe12b30699e6230990df674fe83db006c5d846655c6a3",
+      "releaseMatches": true
+    },
+    {
+      "path": "jellyfin-web/comicsPlayer-plugin.21d92b4919088c4146e7.css",
+      "sha256": "b9133f7aaeb5863f3b82bb695c26566749c22f861973ff5de4b6413eb55fbf19",
+      "releaseMatches": true
+    },
+    {
+      "path": "jellyfin-web/index.html",
+      "sha256": "28afc9348505bee8a10456f15b646f84520f051821b8c745044658cb5f47611f",
+      "releaseMatches": true
+    },
+    {
+      "path": "jellyfin-web/libraries/worker-bundle.js",
+      "sha256": "ae3824efdde3a2cee48b9ff19062837e2fad123f1144afd124765f08f3bc4bd3",
+      "releaseMatches": true
+    },
+    {
+      "path": "Jellyfin.Api.dll",
+      "sha256": "87ce15685ec0bec8527be7fd4a66fa044ba2077ade3ffd1e971872bdf492f9ed",
+      "releaseMatches": true
+    },
+    {
+      "path": "jellyfin.dll",
+      "sha256": "db92ad66fb3a6e42b32af8deb3c8fc2473b86816e7452aa1fcf5a981ca39585c",
+      "releaseMatches": true
+    }
+  ]
+}

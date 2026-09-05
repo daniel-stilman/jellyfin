@@ -1,0 +1,49 @@
+# Reader performance evidence
+
+These measurements support the owner's contribution drafts. Comic delivery and EPUB indexing are separate changes, with separate benchmark methods.
+
+## Comic startup: matched original and fork comparison
+
+A new comparison on 2026-09-05 measured the preserved original Jellyfin web 10.11.11 build and the deployed readers-r5 web build against the same isolated readers-r5 server. The original web build uses the existing whole-archive download endpoint; the fork uses the new comic page API.
+
+| 309-page CBR | Original reader | Fork reader |
+| --- | ---: | ---: |
+| Open 1 | 10,727.2 ms | 312.8 ms |
+| Open 2 | 7,862.2 ms | 162.7 ms |
+| Open 3 | 6,667.8 ms | 162.0 ms |
+| Median | **7,862.2 ms** | **162.7 ms** |
+| Whole archive downloads per open | 1 | 0 |
+
+The median reduction is **97.93%**. Suggested short wording: **7.86 seconds to 0.16 seconds, about a 98% reduction in startup time**.
+
+The measurement starts at the Read button click and ends when the active first-page image has decoded, has nonzero display dimensions, and its dialog is visible, followed by an animation frame. Both variants reported 309 pages and the same 4096 by 2880 first-page image. No uncaught page errors occurred in the six completed measurements.
+
+Conditions: Windows, Intel Core i7-13700F, 32 GiB RAM, headless Edge 152.0.4191.62, 1280 by 900 viewport, 715,110,283-byte CBR, local loopback connection without network throttling. Each variant/repetition used a fresh server process and empty application cache; each open used a fresh browser context. The operating system's file cache was retained. Execution order was original/fork, fork/original, original/fork. This small local sample describes these files and this machine; it is not a universal tablet or network speed claim.
+
+The fork's comic JavaScript/CSS, web index, archive worker, Jellyfin.Api.dll and jellyfin.dll hashes matched the deployed release manifest. [Measurements, environment and build identifiers](benchmarks/comic-startup-2026-09-05.json) are retained without account credentials or private server logs.
+
+## EPUB startup: separate implementation and benchmark
+
+The original compiled-reader benchmark and the rebuilt fork used the same first-usable-page definition. Each reported condition has three samples. The baseline was recorded on 2026-08-17 and the fork was measured on 2026-09-05; these are historical harness comparisons, not the same run as the comic comparison above.
+
+| Large omnibus EPUB | First usable page, median |
+| --- | ---: |
+| Original, cold location cache | **20,173.0 ms** |
+| Fork, cold location cache | **214.8 ms** |
+| Fork, warm location cache | **209.2 ms** |
+
+Cold first-page time fell by **98.94%**. Suggested short wording: **20.17 seconds to 0.21 seconds, about a 99% reduction**.
+
+This measures when reading can begin. Cold location-map generation still took a median 3,067.2 ms in the background; the first-page result does not mean the map or exact saved-percentage restoration is complete. Completed maps are cached for reuse. Five EPUBs passed the original performance gates over 30 fork opens. [Comparison results](benchmarks/epub-startup-2026-09-05.json) retain all five workloads and their sample counts.
+
+## Earlier figures and measurement boundaries
+
+The earlier migrated-build checks recorded 503 ms for the 309-page comic and 898 ms for the 1,064-page compendium. Those were individual startup checks, with a different timing boundary, and had no matched original-reader run. They demonstrate that the deployed optimization still works, but are not the denominator for a before/after percentage.
+
+The old comic harness's 17.11-second and 18.27-second wall times included subsequent page navigation and waits for blank pages. They must not be presented as startup times or paired with 503/898 ms to calculate a startup improvement.
+
+A historical compendium check recorded 15,047 ms to 282 ms, but its baseline was an earlier custom reader falling back after a missing API endpoint, not untouched upstream. In the new attempt, the preserved original reader did not display the compendium's first page within the 120-second limit. That single timeout is not a completed before/after comparison and is not used in the headline. The repeated comparison was completed for the requested 309-page comic.
+
+## PR writing convention check
+
+A sample of 20 recent merged non-dependency web PRs contained 19 checked testing confirmations and no separate Testing heading. The [current template](https://github.com/jellyfin/jellyfin-web/blob/master/.github/pull_request_template.md) has a testing checkbox, Changes, Issues and Code assistance. The [sample list](benchmarks/pr-testing-style-2026-09-05.json) supports the count. This supports concise testing confirmation for the resume PR; it does not remove the need to test the code.
