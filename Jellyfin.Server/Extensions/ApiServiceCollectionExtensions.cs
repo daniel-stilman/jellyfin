@@ -111,6 +111,7 @@ namespace Jellyfin.Server.Extensions
         public static IMvcBuilder AddJellyfinApi(this IServiceCollection serviceCollection, IEnumerable<Assembly> pluginAssemblies, NetworkConfiguration config)
         {
             IMvcBuilder mvcBuilder = serviceCollection
+                .AddSingleton<Jellyfin.Api.Services.ComicPages.ComicPageService>()
                 .AddCors()
                 .AddTransient<ICorsPolicyProvider, CorsPolicyProvider>()
                 .Configure<ForwardedHeadersOptions>(options =>
