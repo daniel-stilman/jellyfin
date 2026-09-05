@@ -1,0 +1,74 @@
+{
+  "date": "2026-09-05",
+  "forks": [
+    {
+      "repository": "daniel-stilman/jellyfin",
+      "parent": "jellyfin/jellyfin",
+      "defaultBranch": "custom/10.11.11-readers"
+    },
+    {
+      "repository": "daniel-stilman/jellyfin-web",
+      "parent": "jellyfin/jellyfin-web",
+      "defaultBranch": "custom/10.11.11-readers"
+    }
+  ],
+  "resumeFiles": [
+    "src/plugins/bookPlayer/plugin.js",
+    "src/plugins/comicsPlayer/plugin.js",
+    "src/utils/bookPlayerResume.test.ts",
+    "src/utils/bookPlayerResume.ts"
+  ],
+  "comicWebFiles": [
+    "src/plugins/comicsPlayer/plugin.js",
+    "src/plugins/comicsPlayer/style.scss",
+    "src/utils/comicsPlayerApiSource.js",
+    "src/utils/comicsPlayerApiSource.test.js",
+    "src/utils/comicsPlayerArchiveSource.js",
+    "src/utils/comicsPlayerArchiveSource.test.js"
+  ],
+  "comicServerFiles": [
+    "Jellyfin.Api/Controllers/ComicPagesController.cs",
+    "Jellyfin.Api/Jellyfin.Api.csproj",
+    "Jellyfin.Api/Models/ComicDtos/ComicManifest.cs",
+    "Jellyfin.Api/Models/ComicDtos/ComicPageResult.cs",
+    "Jellyfin.Api/Services/ComicPages/ComicPageService.cs",
+    "Jellyfin.Api/Services/ComicPages/NaturalStringComparer.cs",
+    "Jellyfin.Server/Extensions/ApiServiceCollectionExtensions.cs",
+    "tests/Jellyfin.Api.Tests/ComicPageServiceTests.cs",
+    "tests/Jellyfin.Api.Tests/ComicPagesControllerTests.cs"
+  ],
+  "originalWebOverlayPreserved": {
+    "oldOverlayProducesTree": "afe8c6ac8199dfa60fdda72f18d1e110deb6605e",
+    "importedForkTree": "afe8c6ac8199dfa60fdda72f18d1e110deb6605e",
+    "exactMatch": true,
+    "epubCommit": "9ef9b55400bc0bc564d5f023500b75cd3a2e7bb1",
+    "comicWebCommit": "20ec84b1bbaafc7d503d9a821b688c78a3b30d5a"
+  },
+  "publishedCorrections": [
+    "Resume description limited to EPUB/comics and a cached nonzero resume value",
+    "Comic manifest described as page count and archive version, not a page list",
+    "Comic prototype references point to focused commits rather than the complete custom-release branches"
+  ],
+  "epubSplitRequired": false,
+  "epubContribution": {
+    "branch": "perf/epub-startup",
+    "head": "4f313fc72738b60861733f9a67ed9efd936217d8",
+    "base": "b8a9496d4318d11ad633d4e8f9aa1061b2d0523c",
+    "files": [
+      "src/plugins/bookPlayer/plugin.js",
+      "src/utils/bookPlayerLocationCache.test.ts",
+      "src/utils/bookPlayerLocationCache.ts",
+      "src/utils/bookPlayerLocations.test.ts",
+      "src/utils/bookPlayerLocations.ts"
+    ],
+    "validation": {
+      "successfulBenchmarkOpens": 28,
+      "uncaughtBenchmarkErrors": 0,
+      "equalLocationCountsBetweenBuilds": true,
+      "unitTests": 190,
+      "types": "passed",
+      "changedFileLint": "passed",
+      "productionBuild": "passed; pre-existing asset/entrypoint size warnings only"
+    }
+  }
+}

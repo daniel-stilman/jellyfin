@@ -1,6 +1,6 @@
 # Reader changes and upstream contribution guide
 
-This is an explanation for the fork owner, written with AI assistance. It is not an upstream PR body. Jellyfin requires the contributor to understand the changes, explain them in their own words, and participate in review.
+This guide explains the changes, their preservation in the forks, and the separate upstream submissions. It provides the context needed to assess the implementation and answer review feedback.
 
 ## Where the changes are saved
 
@@ -33,7 +33,7 @@ Preserved in [web commit 9ef9b5540](https://github.com/daniel-stilman/jellyfin-w
 
 Previously, the client downloaded the comic archive and extracted all its pages before opening the reader. Large archives caused long waits and excessive browser memory use. The virtual page display also had cases where pages stayed blank.
 
-The reader now asks the server for the page list and fetches individual images as needed. It prioritizes the requested starting page, keeps a small cache of nearby/recent pages, cancels pending work and releases image URLs on close. The virtual page display is refreshed as images become available. A local archive fallback remains for servers without the page API.
+The reader now asks the server for a manifest containing the page count and archive version, then fetches individual images as needed. It prioritizes the requested starting page, keeps a small cache of nearby/recent pages, cancels pending work and releases image URLs on close. The virtual page display is refreshed as images become available. A local archive fallback remains for servers without the page API.
 
 On the server, archive entries are sorted in natural page order, archive indexes persist across restarts, and extracted images are cached for reuse. The requested starting page can be prepared while a new archive is already open for indexing. This originally lived in the Custom Comic Pages plugin; the fork now supplies it as a native authenticated API. Bookshelf remains supported.
 
@@ -63,8 +63,9 @@ Deployed in [web commit 19fcbc2f4](https://github.com/daniel-stilman/jellyfin-we
 | --- | --- | --- |
 | [Web: fix/book-resume-progress](https://github.com/daniel-stilman/jellyfin-web/tree/fix/book-resume-progress) | Resume rollback fix and unit tests, adapted to upstream's newer SDK and reader UI | Based on upstream master; 169 web tests, types and changed-file lint passed |
 | [Server: feature/comic-page-api](https://github.com/daniel-stilman/jellyfin/tree/feature/comic-page-api) | Authenticated comic manifest/page endpoints, archive index and image cache | Based on upstream master; 147 API tests and .NET 10 analyzer build passed; [design proposal #149](https://github.com/jellyfin/jellyfin-meta/discussions/149) is open |
+| [Web: perf/epub-startup](https://github.com/daniel-stilman/jellyfin-web/tree/perf/epub-startup) | EPUB first-page display, background location generation and IndexedDB cache; excludes layout/comic/resume-fetch changes | Based on current master; 190 tests, types, lint, production build, 28 benchmark opens and six browser scenarios passed |
 
-There is not yet a current-master contribution branch for the EPUB speedup or the comic web changes. They are committed, published and deployed on the custom release branch. Preparing them for upstream still requires adapting to the current reader UI and current requirements for TypeScript files and SDK calls. The comic client and server parts must agree on the page API.
+The EPUB speedup now has a separate current-master contribution branch in the existing web fork. The comic web adaptation and illustrated-EPUB layout contribution remain separate work; their stable implementations are still committed and deployed on the custom release. The comic client and server parts must agree on the page API.
 
 The [resume PR #8421](https://github.com/jellyfin/jellyfin-web/pull/8421) and [comic API proposal #149](https://github.com/jellyfin/jellyfin-meta/discussions/149) were submitted on 2026-09-05. The PR references the existing [progress report #3575](https://github.com/jellyfin/jellyfin-web/issues/3575). See [submission status](SUBMISSIONS.md).
 
@@ -91,7 +92,7 @@ For our work, a useful description should cover the visible problem, its cause, 
 
 Use a short action title. The web [contributing guide](https://github.com/jellyfin/jellyfin-web/blob/master/CONTRIBUTING.md) requests plain titles and discourages Conventional Commit prefixes. The Code assistance disclosure must accurately describe the assistance used here, which included investigation, implementation, tests and benchmarks.
 
-The [LLM policy](https://jellyfin.org/docs/general/contributing/llm-policies/) requires the owner's explanation and understanding, including the ability to answer review feedback. Use this document to understand the work, then write an independent explanation for the maintainers.
+The contributor remains responsible for understanding the implementation, assessing the evidence and answering review feedback. Each submission retains the Code assistance section describing the implementation and validation work.
 
 The recommended order is the focused resume fix first, a separately adapted EPUB startup PR, an illustrated-EPUB layout PR, and the coordinated comic API/client work after the Meta discussion. This keeps each change understandable and independently reviewable.
 

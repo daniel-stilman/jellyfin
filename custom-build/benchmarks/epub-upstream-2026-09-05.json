@@ -1,0 +1,468 @@
+{
+  "date": "2026-09-05",
+  "runId": "2026-09-05T17-50-10-931Z",
+  "baselineCommit": "b8a9496d4318d11ad633d4e8f9aa1061b2d0523c",
+  "candidateCommit": "4f313fc72738b60861733f9a67ed9efd936217d8",
+  "candidateFiles": [
+    "src/plugins/bookPlayer/plugin.js",
+    "src/utils/bookPlayerLocationCache.test.ts",
+    "src/utils/bookPlayerLocationCache.ts",
+    "src/utils/bookPlayerLocations.test.ts",
+    "src/utils/bookPlayerLocations.ts"
+  ],
+  "environment": {
+    "platform": "Windows",
+    "cpu": "Intel Core i7-13700F",
+    "memoryGiB": 32,
+    "browser": "Microsoft Edge 152.0.4191.62 (headless)",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "epubjsVersion": "0.3.93",
+    "network": "Local HTTP, no throttling"
+  },
+  "method": {
+    "harness": "Production-compiled BookPlayer; local SDK download URL; no Jellyfin backend or React OSD mount",
+    "timing": "BookPlayer.play to a rendered visible frame with loading spinner inactive, followed by two animation frames",
+    "cold": "New browser context per variant/repetition; empty HTTP and IndexedDB caches",
+    "warm": "New page in the same context immediately after the cold open; HTTP and IndexedDB caches retained",
+    "osFileCache": "Retained",
+    "order": "Candidate/baseline for odd repetitions, baseline/candidate for even repetitions",
+    "repetitions": "Three cold/warm pairs per build for the omnibus; one pair per build for each of four smaller books",
+    "largeBook": {
+      "description": "Six-book omnibus EPUB",
+      "spineItems": 171,
+      "fileBytes": 6754551
+    },
+    "limitations": "First usable page is distinct from location-map completion and exact saved-percentage restoration. These local desktop figures are not universal tablet/network timings."
+  },
+  "groups": [
+    {
+      "variant": "baseline",
+      "subject": "old-mans-war-01-06-omnibus",
+      "cache": "cold",
+      "count": 3,
+      "fileBytes": 6754551,
+      "locationCount": 3601,
+      "usableMs": [
+        20166.5,
+        20193.4,
+        20172.3
+      ],
+      "locationsReadyMs": [
+        20166.5,
+        20193.4,
+        20172.3
+      ],
+      "medianUsableMs": 20172.3,
+      "medianLocationsReadyMs": 20172.3,
+      "generationCalls": null
+    },
+    {
+      "variant": "baseline",
+      "subject": "old-mans-war-01-06-omnibus",
+      "cache": "warm",
+      "count": 3,
+      "fileBytes": 6754551,
+      "locationCount": 3601,
+      "usableMs": [
+        20215.2,
+        20181.2,
+        20169
+      ],
+      "locationsReadyMs": [
+        20215.2,
+        20181.2,
+        20169
+      ],
+      "medianUsableMs": 20181.2,
+      "medianLocationsReadyMs": 20181.2,
+      "generationCalls": null
+    },
+    {
+      "variant": "baseline",
+      "subject": "shattering-peace",
+      "cache": "cold",
+      "count": 1,
+      "fileBytes": 1981981,
+      "locationCount": 455,
+      "usableMs": [
+        4360.2
+      ],
+      "locationsReadyMs": [
+        4360.2
+      ],
+      "medianUsableMs": 4360.2,
+      "medianLocationsReadyMs": 4360.2,
+      "generationCalls": null
+    },
+    {
+      "variant": "baseline",
+      "subject": "shattering-peace",
+      "cache": "warm",
+      "count": 1,
+      "fileBytes": 1981981,
+      "locationCount": 455,
+      "usableMs": [
+        4368.2
+      ],
+      "locationsReadyMs": [
+        4368.2
+      ],
+      "medianUsableMs": 4368.2,
+      "medianLocationsReadyMs": 4368.2,
+      "generationCalls": null
+    },
+    {
+      "variant": "baseline",
+      "subject": "sagan-diary",
+      "cache": "cold",
+      "count": 1,
+      "fileBytes": 1035968,
+      "locationCount": 71,
+      "usableMs": [
+        1672.6
+      ],
+      "locationsReadyMs": [
+        1672.6
+      ],
+      "medianUsableMs": 1672.6,
+      "medianLocationsReadyMs": 1672.6,
+      "generationCalls": null
+    },
+    {
+      "variant": "baseline",
+      "subject": "sagan-diary",
+      "cache": "warm",
+      "count": 1,
+      "fileBytes": 1035968,
+      "locationCount": 71,
+      "usableMs": [
+        1664.6
+      ],
+      "locationsReadyMs": [
+        1664.6
+      ],
+      "medianUsableMs": 1664.6,
+      "medianLocationsReadyMs": 1664.6,
+      "generationCalls": null
+    },
+    {
+      "variant": "baseline",
+      "subject": "questions-for-a-soldier",
+      "cache": "cold",
+      "count": 1,
+      "fileBytes": 249223,
+      "locationCount": 31,
+      "usableMs": [
+        726.8
+      ],
+      "locationsReadyMs": [
+        726.8
+      ],
+      "medianUsableMs": 726.8,
+      "medianLocationsReadyMs": 726.8,
+      "generationCalls": null
+    },
+    {
+      "variant": "baseline",
+      "subject": "questions-for-a-soldier",
+      "cache": "warm",
+      "count": 1,
+      "fileBytes": 249223,
+      "locationCount": 31,
+      "usableMs": [
+        728.5
+      ],
+      "locationsReadyMs": [
+        728.6
+      ],
+      "medianUsableMs": 728.5,
+      "medianLocationsReadyMs": 728.6,
+      "generationCalls": null
+    },
+    {
+      "variant": "baseline",
+      "subject": "after-the-coup",
+      "cache": "cold",
+      "count": 1,
+      "fileBytes": 106537,
+      "locationCount": 41,
+      "usableMs": [
+        723.3
+      ],
+      "locationsReadyMs": [
+        723.3
+      ],
+      "medianUsableMs": 723.3,
+      "medianLocationsReadyMs": 723.3,
+      "generationCalls": null
+    },
+    {
+      "variant": "baseline",
+      "subject": "after-the-coup",
+      "cache": "warm",
+      "count": 1,
+      "fileBytes": 106537,
+      "locationCount": 41,
+      "usableMs": [
+        715.5
+      ],
+      "locationsReadyMs": [
+        715.5
+      ],
+      "medianUsableMs": 715.5,
+      "medianLocationsReadyMs": 715.5,
+      "generationCalls": null
+    },
+    {
+      "variant": "candidate",
+      "subject": "old-mans-war-01-06-omnibus",
+      "cache": "cold",
+      "count": 3,
+      "fileBytes": 6754551,
+      "locationCount": 3601,
+      "usableMs": [
+        208,
+        192.3,
+        204.8
+      ],
+      "locationsReadyMs": [
+        3076.1,
+        3059.3,
+        3072.7
+      ],
+      "medianUsableMs": 204.8,
+      "medianLocationsReadyMs": 3072.7,
+      "generationCalls": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "variant": "candidate",
+      "subject": "old-mans-war-01-06-omnibus",
+      "cache": "warm",
+      "count": 3,
+      "fileBytes": 6754551,
+      "locationCount": 3601,
+      "usableMs": [
+        201.2,
+        203.6,
+        230.6
+      ],
+      "locationsReadyMs": [
+        203.2,
+        205.6,
+        230.6
+      ],
+      "medianUsableMs": 203.6,
+      "medianLocationsReadyMs": 205.6,
+      "generationCalls": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "variant": "candidate",
+      "subject": "shattering-peace",
+      "cache": "cold",
+      "count": 1,
+      "fileBytes": 1981981,
+      "locationCount": 455,
+      "usableMs": [
+        142.3
+      ],
+      "locationsReadyMs": [
+        758.7
+      ],
+      "medianUsableMs": 142.3,
+      "medianLocationsReadyMs": 758.7,
+      "generationCalls": [
+        1
+      ]
+    },
+    {
+      "variant": "candidate",
+      "subject": "shattering-peace",
+      "cache": "warm",
+      "count": 1,
+      "fileBytes": 1981981,
+      "locationCount": 455,
+      "usableMs": [
+        148.5
+      ],
+      "locationsReadyMs": [
+        149.6
+      ],
+      "medianUsableMs": 148.5,
+      "medianLocationsReadyMs": 149.6,
+      "generationCalls": [
+        0
+      ]
+    },
+    {
+      "variant": "candidate",
+      "subject": "sagan-diary",
+      "cache": "cold",
+      "count": 1,
+      "fileBytes": 1035968,
+      "locationCount": 71,
+      "usableMs": [
+        140.4
+      ],
+      "locationsReadyMs": [
+        373.4
+      ],
+      "medianUsableMs": 140.4,
+      "medianLocationsReadyMs": 373.4,
+      "generationCalls": [
+        1
+      ]
+    },
+    {
+      "variant": "candidate",
+      "subject": "sagan-diary",
+      "cache": "warm",
+      "count": 1,
+      "fileBytes": 1035968,
+      "locationCount": 71,
+      "usableMs": [
+        129.1
+      ],
+      "locationsReadyMs": [
+        130.2
+      ],
+      "medianUsableMs": 129.1,
+      "medianLocationsReadyMs": 130.2,
+      "generationCalls": [
+        0
+      ]
+    },
+    {
+      "variant": "candidate",
+      "subject": "questions-for-a-soldier",
+      "cache": "cold",
+      "count": 1,
+      "fileBytes": 249223,
+      "locationCount": 31,
+      "usableMs": [
+        123.2
+      ],
+      "locationsReadyMs": [
+        222.4
+      ],
+      "medianUsableMs": 123.2,
+      "medianLocationsReadyMs": 222.4,
+      "generationCalls": [
+        1
+      ]
+    },
+    {
+      "variant": "candidate",
+      "subject": "questions-for-a-soldier",
+      "cache": "warm",
+      "count": 1,
+      "fileBytes": 249223,
+      "locationCount": 31,
+      "usableMs": [
+        132.4
+      ],
+      "locationsReadyMs": [
+        133.5
+      ],
+      "medianUsableMs": 132.4,
+      "medianLocationsReadyMs": 133.5,
+      "generationCalls": [
+        0
+      ]
+    },
+    {
+      "variant": "candidate",
+      "subject": "after-the-coup",
+      "cache": "cold",
+      "count": 1,
+      "fileBytes": 106537,
+      "locationCount": 41,
+      "usableMs": [
+        128.4
+      ],
+      "locationsReadyMs": [
+        227.4
+      ],
+      "medianUsableMs": 128.4,
+      "medianLocationsReadyMs": 227.4,
+      "generationCalls": [
+        1
+      ]
+    },
+    {
+      "variant": "candidate",
+      "subject": "after-the-coup",
+      "cache": "warm",
+      "count": 1,
+      "fileBytes": 106537,
+      "locationCount": 41,
+      "usableMs": [
+        128.8
+      ],
+      "locationsReadyMs": [
+        129.8
+      ],
+      "medianUsableMs": 128.8,
+      "medianLocationsReadyMs": 129.8,
+      "generationCalls": [
+        0
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "check": "cold resume preserves percentage before indexing and restores the saved page",
+      "progress": 0.35,
+      "generationCalls": 1
+    },
+    {
+      "check": "warm resume restores the saved page without generating locations",
+      "progress": 0.35,
+      "generationCalls": 0
+    },
+    {
+      "check": "corrupted IndexedDB entry regenerates and resumes correctly",
+      "progress": 0.35
+    },
+    {
+      "check": "navigation during cold indexing is retained and reported",
+      "progress": 0.023333333333333334
+    },
+    {
+      "check": "closing during indexing preserves existing progress and cancels the reader",
+      "progress": 0.35,
+      "mediaElement": null,
+      "cancelled": true
+    },
+    {
+      "check": "unavailable browser storage falls back to generation and correct resume",
+      "progress": 0.35
+    }
+  ],
+  "validation": {
+    "successfulBenchmarkOpens": 28,
+    "uncaughtBenchmarkErrors": 0,
+    "equalLocationCountsBetweenBuilds": true,
+    "unitTests": 190,
+    "types": "passed",
+    "changedFileLint": "passed",
+    "productionBuild": "passed; asset/entrypoint size warnings"
+  },
+  "buildInputSha256Windows": {
+    "src/plugins/bookPlayer/plugin.js": "0100506a456ebc3d81b50c2676ccfe8c3cd101db81ec224a0042dc101a06b529",
+    "src/utils/bookPlayerLocationCache.test.ts": "a515c67728692ee8aea258a579570925084b10f4869370dc74dda5be2925b06d",
+    "src/utils/bookPlayerLocationCache.ts": "58940fb69e49126e2e6c29dd7bace9a35154d53ae9710d1b2a9b0d0f350d7ab3",
+    "src/utils/bookPlayerLocations.test.ts": "79aa735b36561b8256e98a330b084e89ab5b65b4d69fe7c2ac66ba0b32fc8ce8",
+    "src/utils/bookPlayerLocations.ts": "6874a3dda229bb557359b06fd328811537e78ef6021bf920415d2c05fe161e80"
+  }
+}
