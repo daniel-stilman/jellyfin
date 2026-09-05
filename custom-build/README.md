@@ -8,6 +8,8 @@ Requires Windows, PowerShell 7, Git, Node 20 or newer and the .NET 9 SDK selecte
 
 This runs web tests, types, reader lint and the production build; then server tests, analyzers and a self-contained Windows publish. `New-ReaderRelease.ps1` packages already validated outputs when these steps were run separately. Do not package untested outputs. Every release records both source commits and every managed file's SHA-256. Keep builds, data, logs, credentials and backups outside the repositories.
 
+Run deployment commands in an administrator PowerShell when installing under Program Files. Start the tray under the normal user account with its working directory set to the installation directory.
+
 Prepare while the server is running:
 
 ```powershell

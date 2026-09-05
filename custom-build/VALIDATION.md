@@ -26,3 +26,7 @@ Real 309-page and 1,064-page CBRs opened in 503 ms and 898 ms. Sampled beginning
 An illustrated EPUB was checked at 390 by 844 pixels, device scale factor 3. Both its first and next page fit the viewport and navigation changed the image.
 
 Raw runs, screenshots, private media paths and isolated test credentials stay outside public repositories. Re-run browser checks on a separate instance whenever reader rendering, storage, dependencies or resume behavior changes.
+
+The deployment and rollback rehearsal passed: local web settings and installer extras were preserved, obsolete web files were removed from the candidate, the old plugin was retired/restored correctly, and rollback preserved newer reading progress. Production was switched to the verified release with a complete offline data backup. The running version and all 2,809 managed file hashes match.
+
+The separate current-master resume branch passed 169 web tests, its seven focused regression cases, types and changed-file lint. The current-master server proposal passed 147 API tests and the .NET 10 analyzer build. These are prepared contribution branches, not accepted upstream changes.

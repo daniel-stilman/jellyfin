@@ -1,6 +1,6 @@
 # Reader fork
 
-This is a full Jellyfin fork. The `custom/10.11.11-readers` branch and companion [web fork](https://github.com/daniel-stilman/jellyfin-web/tree/custom/10.11.11-readers) form one tested release based on official v10.11.11.
+This is a full Jellyfin fork. The custom reader code and validation tooling were developed with AI assistance; upstream contributions require owner review. The `custom/10.11.11-readers` branch and companion [web fork](https://github.com/daniel-stilman/jellyfin-web/tree/custom/10.11.11-readers) form one tested release based on official v10.11.11.
 
 The native comic API replaces the earlier Custom Comic Pages plugin. It authenticates requests, resolves items for the current user, sorts archive pages naturally, and extracts only requested pages. Archive indexes survive restarts; extracted images use a bounded disk cache. Bookshelf remains supported.
 
